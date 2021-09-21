@@ -56,12 +56,7 @@ h3{
 
 /* Header section  */
 
-#background_block { 
-  width: 100%; 
-  margin: 0 auto;
-  padding: 0; 
-  background-color: var(--clr-darkgreen);
-}
+
 
 
 
@@ -125,6 +120,8 @@ p{
 img { 
   display: block;
   margin: auto;
+  max-width: 100%;
+  height: auto;
 }
 .flex-row { 
   display: flex; 
@@ -172,6 +169,23 @@ img {
 
 /* Resume section */
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 576px) {
+  .container, 
+  .project { 
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+
+  }
+    
+  .flex-row { 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
 @media screen and (min-width: 768px) {
   header{ 
     flex-direction: row;
@@ -183,9 +197,13 @@ img {
   .page-title { 
     align-items: right;
   }
-
-  
 }
 
-
-  
+@media screen and (min-width: 992px) {
+  header{ 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2; 
+  }
+}
