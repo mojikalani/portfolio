@@ -6,9 +6,10 @@
   --fw-reg: 300;
   --fw-bold: 900; 
 
-  --clr-light: beige; 
-  --clr-dark: black; 
-  --clr-accent: red; 
+  --clr-beige: beige; 
+  --clr-darkgreen: darkgreen; 
+  --clr-accent: rgb(88, 28, 28); 
+
 
   --fs-h1: 3rem; 
   --fs-h2: 2.25rem; 
@@ -21,21 +22,19 @@
   box-sizing: border-box;
 }
 
-img { 
-  min-width: 100%;
-    height: 15vh;
+header {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: grey;
+    color: #ffffff;
     align-items: center;
-    position: relative;
-    flex: 1 0 400px;
-    padding: 8px;
-    margin: 8px;
-    border: var(--clr-dark) 4px solid;
 }
 
-
+header a { 
+  text-decoration: none;
+  color: inherit;
+}
 /* Typeography */ 
 h1,
 h2, 
@@ -57,19 +56,15 @@ h3{
 
 /* Header section  */
 
+#background_block { 
+  width: 100%; 
+  margin: 0 auto;
+  padding: 0; 
+  background-color: var(--clr-darkgreen);
+}
 
-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: grey;
-    color: #ffffff;
-   justify-content: center;
-}
-header a { 
-  text-decoration: none;
-  color: inherit;
-}
+
+
 header h1 {
     
     font-size: 200%;
@@ -80,7 +75,7 @@ nav {
   display: block;
 }
 
-.nav_ul li { 
+#navList{ 
   flex: 1 0 auto;
   margin: 8px;
   border-bottom: 1px solid;
@@ -109,22 +104,28 @@ nav a {
     font-weight: bold;
     padding: 10px;
     text-decoration: none;
-    text-align: center;
   }
   
 nav a:hover {
     color: var(--clr-accent);
-    border-bottom: solid var(--clr-accent);
-  }
-  
-a {
-    color: #ffffff;
-    text-decoration: underline;
-    cursor: pointer;
+    padding-bottom: 3px;
+    margin: 8px;
+    flex: 1 0 auto;
   }
 
+p{ 
+  font-family: var(--ff-secondary);
+  margin: 8px;
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  color: var(--clr-dark);
+}
 
 /* Work Section */
+img { 
+  display: block;
+  margin: auto;
+}
 .flex-row { 
   display: flex; 
   flex-direction: column;
@@ -133,23 +134,12 @@ a {
   border-bottom: solid 3px blue;
   padding-bottom: 3px;
 }
-.project { 
-  min-width: 100%;
-  padding: 8px;
-  border:  grey dotted 2px;
-  height: 15vh;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  position: relative;
-  margin: 8px;
-  border: blue 4px solid;
-}
+
 .work_container {
   display: flex; 
   flex-direction: column;
-
+  flex-direction: row;
+  width: 100%;
 }
 .work_container h2 { 
   border-bottom: solid blue;
