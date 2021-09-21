@@ -12,7 +12,7 @@
 
 
   --fs-h1: 3rem; 
-  --fs-h2: 2.25rem; 
+  --fs-h2: 200%; 
   --fs-h3: 1.25rem; 
   --fs-body: 1rem; 
 
@@ -22,6 +22,9 @@
   box-sizing: border-box;
 }
 
+body { 
+  font-size: 20px; ;
+}
 header {
     width: 100%;
     display: flex;
@@ -48,12 +51,16 @@ h1 {
   font-size: var(--fs-h1);
 }
 h2{ 
-  font-size: var(--fs-h2);
+  font-size: 200%;
+  border-bottom: 3px solid blue;
 }
 h3{
   font-size: var(--fs-h3);
 }
 
+section { 
+  padding: 0.5rem;
+}
 /* Header section  */
 
 
@@ -66,9 +73,6 @@ header h1 {
     color:var(--clr-accent);
   }
 
-nav { 
-  display: block;
-}
 
 #navList{ 
   flex: 1 0 auto;
@@ -110,15 +114,16 @@ nav a:hover {
 
 p{ 
   font-family: var(--ff-secondary);
-  margin: 8px;
   font-size: var(--fs-h3);
   line-height: 1.2;
   color: var(--clr-dark);
+  padding-top: 0.5rem;
 }
 
 /* Work Section */
 img { 
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   margin: auto;
   max-width: 100%;
   height: auto;
@@ -126,11 +131,9 @@ img {
 .flex-row { 
   display: flex; 
   flex-direction: column;
+  
 }
-.flex-row h2 { 
-  border-bottom: solid 3px blue;
-  padding-bottom: 3px;
-}
+
 
 .work_container {
   display: flex; 
@@ -138,9 +141,7 @@ img {
   flex-direction: row;
   width: 100%;
 }
-.work_container h2 { 
-  border-bottom: solid blue;
-}
+
 .container{ 
   display: flex; 
   flex-wrap: wrap;
@@ -163,9 +164,7 @@ img {
   align-items: center;
   display: block;
 }
-.contact-me ul{
-  color: blue;
-}
+
 
 /* Resume section */
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
@@ -178,32 +177,51 @@ img {
 
   }
     
-  .flex-row { 
-    text-align: center;
+
+
+}
+
+
+@media screen and (min-width: 900px) {
+ 
+  /* For headings */
+  header{ 
     display: flex;
-    flex-direction: column;
-  }
-
-}
-
-@media screen and (min-width: 768px) {
-  header{ 
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 8px
-  }
-  
-  .page-title { 
-    align-items: right;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  header{ 
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding: 2; 
   }
+
+  .head_nav { 
+    justify-content: end;
+  } 
+  section { 
+    display: flex;
+  }
+  h2 { 
+    border-right: 3px solid blue;
+    border-bottom: none;
+    padding-top: 0; 
+    padding-right: 0.5rem;
+  }
+  p { 
+    padding-left: 0.5em;
+    justify-content: center;
+  }
+  .col-left { 
+    width: 25%;
+    text-align: end;
+  }
+
+  .col-right { 
+    width: 75%;
+  }
+
+
+  .card-img{ 
+    width: 100%;
+    padding: 10px; 
+
+  }
+
 }
