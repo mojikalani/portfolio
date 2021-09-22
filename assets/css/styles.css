@@ -13,7 +13,7 @@
 
   --fs-h1: 3rem; 
   --fs-h2: 200%; 
-  --fs-h3: 1.25rem; 
+  --fs-h3: 1.2rem; 
   --fs-body: 1rem; 
 
 }
@@ -23,20 +23,36 @@
 }
 
 body { 
-  font-size: 20px; ;
+  font-size: 20px; 
+  background-color: beige;
 }
 header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: grey;
     color: #ffffff;
-    align-items: center;
+    align-items: center; 
+    background-color:rgb(36, 88, 80);
+    justify-content: center;
 }
 
-header a { 
+header a,
+footer a { 
   text-decoration: none;
-  color: inherit;
+
+}
+
+footer{ 
+  display: flex;
+  flex-direction: column;
+}
+
+
+#contact-info{ 
+  display: block;
+  margin: 2px;
+  width: 100%;
+  font-family: var(--ff-secondary);
 }
 /* Typeography */ 
 h1,
@@ -51,14 +67,30 @@ h1 {
   font-size: var(--fs-h1);
 }
 h2{ 
-  font-size: 200%;
-  border-bottom: 3px solid blue;
+  font-size: 100%;
+  border-bottom: 3px solid rgb(88, 28, 28);
+  text-align: center;
 }
+
 
 section { 
   padding: 0.5rem;
 }
 
+#project-title{ 
+  display: flex;
+  justify-content: stretch;
+  position: absolute;
+  z-index: 1;
+  /* margin-top: 20rem;
+  margin-left: 5px; */
+  align-items: flex-start;
+  background-color: white;
+  padding: 5px;
+  border: 2px solid (58, 107, 107) ;
+
+
+}
 /* Header section  */
 
 
@@ -66,24 +98,24 @@ section {
 
 
 header h1 {
-    
+
     font-size: 200%;
-    color:var(--clr-accent);
+    color:white;
   }
 
 
 #navList{ 
   flex: 1 0 auto;
-  margin: 8px;
+  margin: 4px;
   border-bottom: 1px solid;
-  padding-bottom: 4px;
+  padding-bottom: 1px;
   
 }
 .nav_ul {
   font-size: 16px;
   flex: 1 1 auto;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction:row;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
@@ -92,12 +124,8 @@ header h1 {
   padding: 5px;
 }
 
-.about_me { 
-  display: flex;
-  flex-direction: column;
-}
 nav a {
-    color: white;
+    color: beige;
     font-weight: bold;
     padding: 10px;
     text-decoration: none;
@@ -121,6 +149,17 @@ p{
 /* Work Section */
 .card-img{ 
   width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  margin: 0px;
+  border: rgb(36, 88, 80) 6px solid;
+}
+
+.card-img:hover{ 
+  border: white 4px solid; 
 }
 .project { 
   display: flex;
@@ -155,21 +194,34 @@ p{
 
 /* Contacts Section */
 
-.contact-me { 
-  align-items: center;
-  display: block;
+#contact-info { 
+  color: black
+}
+#contact-info:hover{ 
+  background-color: yellow;
+}
+#contact-me { 
+  padding: 8px;
 }
  
+/* Footer Section */
 
-
-/* Resume section */
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 @media screen and (min-width: 576px) {
- 
+  #contact-me{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .work_container { 
+    flex: 1 0 42%;
+  }
+  
 }
 
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
  
   /* For headingers */
   header{ 
@@ -177,16 +229,26 @@ p{
     flex-direction: row;
     justify-content: space-between;
     padding: 2; 
+    
+    
   }
 
-  .head_nav { 
-    justify-content: end;
-  } 
+  footer #contact-me{ 
+    width: 100%;
+  }
+  
+  
   section { 
     display: flex;
+    flex-wrap: wrap;
+  }
+  
+  footer { 
+    flex-direction: row;
+    justify-content: space-between;
   }
   h2 { 
-    border-right: 3px solid blue;
+    border-right: 3px solid rgb(88, 28, 28);
     border-bottom: none;
     padding-top: 0; 
     padding-right: 0.5rem;
@@ -226,15 +288,13 @@ p{
     padding: 10px;
   }
 
+   
   #project-title{ 
-    position: absolute;
-    bottom: 48px;
-    left: 20px;
-    z-index: 1;
-    background-color: crimson;
-    padding: 5px;
-    border: 2px solid (58, 107, 107) ;
-
-
+  position: absolute;
+  justify-content: flex-start;
+  bottom: 56px;
+  left: 46px;
+  z-index: 1;
+  background-color: white;
   }
 }
